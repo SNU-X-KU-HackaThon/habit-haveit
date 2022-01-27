@@ -38,12 +38,12 @@ export default function MainMsgModal({ setModalSwitch, msg }) {
             <>
               {" "}
               <div className={classes.content2}>
-                <h2>오늘의 응원 편지가 없습니다!</h2>
+                <h3>오늘의 응원 편지가 없습니다!</h3>
                 <Button
                   className={classes.button}
                   onClick={() => setModalSwitch(false)}
                 >
-                  {"x"}
+                  닫기
                 </Button>
               </div>
             </>

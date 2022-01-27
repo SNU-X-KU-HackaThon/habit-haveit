@@ -17,12 +17,14 @@ export default function MainPresentModal({ setModalSwitch2, gift }) {
               {gift.length === 0 ? (
                 <>
                   <p>아직 받은 선물이 없습니다!</p>
+                  <div className={classes.presentbutton}>
                   <Button
                     className={classes.button}
                     onClick={() => setModalSwitch2(false)}
                   >
                     {"닫기"}
                   </Button>
+                  </div>
                 </>
               ) : (
                 <div className={classes.mintbox}>
