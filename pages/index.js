@@ -18,7 +18,7 @@ export default function Home() {
         />
         <meta
           property="og:image"
-          content="{{ url_for('static', filename='image.png') }}"
+          content="https://i.ibb.co/GpqQGXt/2022-01-27-11-49-30.png"
         />
         <link rel="icon" href="/favicon2.ico" />
       </Head>
