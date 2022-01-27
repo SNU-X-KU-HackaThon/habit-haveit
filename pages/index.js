@@ -1,10 +1,10 @@
 import Head from "next/head";
 import Router from "next/router";
-import classes from "./index.module.css"
+import classes from "./index.module.css";
 
 export default function Home() {
   setTimeout(() => {
-    Router.push("/auth");
+    Router.push("/landingsecond");
   }, 3000);
   return (
     <>
