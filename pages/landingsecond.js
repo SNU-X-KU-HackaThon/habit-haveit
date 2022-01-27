@@ -6,21 +6,21 @@ import Button from "../src/components/Button";
 export default function Landingsecond() {
   const [index, setIndex] = useState(2);
   return (
-    <>
-      <div
-        className={classes.wrap}
-        onClick={() => {
-          if (index === 2) {
-            console.log("hi");
+    <div
+      className={classes.highwrap}
+      onClick={() => {
+        if (index === 2) {
+          console.log("hi");
+        } else {
+          if (index === 5) {
+            Router.push("/auth");
           } else {
-            if (index === 5) {
-              Router.push("/auth");
-            } else {
-              setIndex(index + 1);
-            }
+            setIndex(index + 1);
           }
-        }}
-      >
+        }
+      }}
+    >
+      <div className={classes.wrap}>
         <img src="../cloud.png" />
         <div className={classes.wraptext}>
           {index === 2 ? (
@@ -66,6 +66,6 @@ export default function Landingsecond() {
           <div className={classes.buttons} />
         )}
       </div>
-    </>
+    </div>
   );
 }

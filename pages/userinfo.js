@@ -7,9 +7,12 @@ import Router, { useRouter } from "next/router";
 
 import { signupApi } from "../src/components/utils/api/authApi";
 import { loginState } from "../src/components/utils/recoil/states";
+import moment from "moment";
 
 const Userinfo = () => {
   const router = useRouter();
+  const month = moment().format("M");
+
   const userid = router.query.userid;
   const password = router.query.password;
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -69,7 +72,9 @@ const Userinfo = () => {
       <div>
         <h2>
           {" "}
-          나만의 어드벤트 캘린더를 만들고,<br/>친구들에게 응원을 받아보세요!
+          나만의 어드벤트 캘린더를 만들고,
+          <br />
+          친구들에게 응원을 받아보세요!
         </h2>
       </div>
 
@@ -81,7 +86,7 @@ const Userinfo = () => {
           onChange={usernameChangehandler}
           value={enteredUsername}
         />
-        <label htmlFor="goal">당신의 2월 목표는 무엇인가요?</label>
+        <label htmlFor="goal">당신의 {month}월 목표는 무엇인가요?</label>
         <input
           id="goal"
           type="text"

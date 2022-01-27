@@ -7,6 +7,9 @@
   justify-content: center;
   align-items: center;
 }
+.highwrap {
+  height: -webkit-fill-available;
+}
 
 .wraptext {
   position: absolute;
