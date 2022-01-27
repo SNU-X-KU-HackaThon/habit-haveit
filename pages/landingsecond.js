@@ -1,9 +1,9 @@
+import React, { useState } from "react";
 import Router from "next/router";
 import classes from "./landingsecond.module.css";
 import Button from "../src/components/Button";
-import { useState } from "react";
 
-export default function landingsecond() {
+export default function Landingsecond() {
   const [index, setIndex] = useState(2);
   return (
     <>
