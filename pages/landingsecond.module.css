@@ -1,7 +1,9 @@
 .wrap {
+  height: 100%;
   position: relative;
   height: 375px;
   display: flex;
+
   justify-content: center;
   align-items: center;
 }

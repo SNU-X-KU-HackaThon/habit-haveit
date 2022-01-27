@@ -10,10 +10,14 @@ export default function landingsecond() {
       <div
         className={classes.wrap}
         onClick={() => {
-          if (index === 5) {
-            Router.push("/auth");
+          if (index === 2) {
+            console.log("hi");
           } else {
-            setIndex(index + 1);
+            if (index === 5) {
+              Router.push("/auth");
+            } else {
+              setIndex(index + 1);
+            }
           }
         }}
       >
@@ -58,7 +62,9 @@ export default function landingsecond() {
 
             <Button onClick={() => setIndex(index + 1)}>아직이요!</Button>
           </div>
-        ) : null}
+        ) : (
+          <div className={classes.buttons} />
+        )}
       </div>
     </>
   );
