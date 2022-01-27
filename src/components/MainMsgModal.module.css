@@ -13,9 +13,8 @@
 
 .modal {
   position: fixed;
-  top: 30vh;
-  max-width: 500px;
-  width: 100%;
+  top: 35vh;
+  width: 300px;
   z-index: 100;
   overflow: hidden;
   background: white;
@@ -67,5 +66,5 @@
   justify-content: space-between;
 }
 .actions > button {
-  width: 55px;
+  width: 30px;
 }
