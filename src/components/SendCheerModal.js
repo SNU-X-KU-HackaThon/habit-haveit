@@ -90,6 +90,7 @@ export default function SendCheerModal({ setModalSwitch3, userId }) {
     setInput(copy);
   };
   const onClick = (type) => {
+    console.log(type);
     const copy = { ...input };
     copy["sendType"] = type;
     console.log(copy);
@@ -205,7 +206,11 @@ export default function SendCheerModal({ setModalSwitch3, userId }) {
                 {sendType === "LETTER" ? "편지가" : "선물이"}
                 전송되었어요!{" "}
               </p>
-              <img src="../presente.gif" width="192px" />
+              {sendType === "LETTER" ? (
+                <img src="../sendingletter.gif" width="192px" />
+              ) : (
+                <img src="../presente.gif" width="192px" />
+              )}
             </>
           ) : null}
         </div>

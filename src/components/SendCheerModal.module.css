@@ -93,20 +93,18 @@
 
 .whatitem {
   display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
+}
+.present {
+  width: 92px;
+  height: auto;
+}
+.newletter {
+  width: 70px;
 }
 
-.newletter {
-  height: 95px;
-  position: relative;
-  left: 40%;
-}
 .newletter:clicked {
   border-color: white;
-}
-
-.present {
-  width: 230px;
-  position: absolute;
-  right: 30%;
-  top: 16%;
 }
