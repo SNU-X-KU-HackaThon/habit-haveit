@@ -1,0 +1,28 @@
+.wrap {
+    position:relative;
+    height:375px;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -25%
+}
+
+.wraptext {
+    position: absolute;
+    top: 120px;
+    font-size: 18px;
+    z-index: 1;
+}
+
+.text {
+    line-height: 25px;
+}
+
+
+
+.wrap img {
+    opacity: 0.8;
+    width: 100%;
+	vertical-align: middle;
+}
+

@@ -1,0 +1,71 @@
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.75);
+}
+
+.modal {
+  position: fixed;
+  top: 30vh;
+  max-width: 500px;
+  width: 100%;
+  z-index: 100;
+  overflow: hidden;
+  background: white;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+.content2 {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header {
+  padding: 1rem;
+}
+
+.content > p:nth-child(2) {
+  min-height: 111px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 3px solid #40748f;
+  border-radius: 30px;
+  text-align: center;
+  font-weight: bolder;
+}
+.content > p:last-child {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.header h2 {
+  margin: 0;
+  color: #765227;
+  text-align: center;
+}
+
+.content {
+  padding: 1rem;
+}
+
+.content img {
+  width: 275px;
+}
+
+.actions {
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+.actions > button {
+  width: 55px;
+}
