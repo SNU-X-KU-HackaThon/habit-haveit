@@ -3,13 +3,14 @@ import ErrorModal from "../src/components/ErrorModal";
 import classes from "./signup.module.css";
 import Button from "../src/components/Button";
 import Router from "next/router";
+import { checkApi } from "../src/components/utils/api/authApi";
 
 const Signup = () => {
   const [enteredUserid, setEnteredUserid] = useState("");
   const [enteredpassword, setEnteredpassword] = useState("");
   const [enteredpasswordcheck, setEnteredpasswordcheck] = useState("");
   const [error, setError] = useState();
-
+  const [check, setCheck] = useState(false);
   const addUserHandler = async (
     event,
     enteredUserid,
@@ -36,6 +37,13 @@ const Signup = () => {
       });
       return;
     }
+    if (!check) {
+      setError({
+        title: "Invalid password",
+        message: "아이디 확인을 해주세요.",
+      });
+      return;
+    }
 
     Router.push({
       pathname: "/userinfo",
@@ -59,6 +67,18 @@ const Signup = () => {
 
   const onClick = async () => {
     console.log("click");
+    try {
+      const res = await checkApi(enteredUserid);
+      if (res.data) {
+        setCheck(true);
+      }
+    } catch (e) {
+      setError({
+        title: "Invalid input",
+        message: "아이디가 겹칩니다.",
+      });
+    }
+
     // const res = await checkgiftApi(userId);
     // setGift(res.data.gift_list);
     // setModalSwitch2(true);
