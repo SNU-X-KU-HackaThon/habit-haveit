@@ -13,8 +13,10 @@
 
 .modal {
   position: fixed;
-  top: 35vh;
-  width: 300px;
+  top: 10%;
+  max-width: 330px;
+
+  width: 100%;
   z-index: 100;
   overflow: hidden;
   opacity: 0.8;

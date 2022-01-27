@@ -20,17 +20,17 @@ export default function MainMsgModal({ setModalSwitch, msg }) {
               </div>
               <div className={classes.actions}>
                 {idx !== 0 && (
-                  <Button onClick={() => setIdx(idx - 1)}>{"<"}</Button>
+                  <Button onClick={() => setIdx(idx - 1)}>이전</Button>
                 )}
 
                 <Button
                   className={classes.button}
                   onClick={() => setModalSwitch(false)}
                 >
-                  {"x"}
+                  닫기
                 </Button>
                 {idx < msg.length - 1 && (
-                  <Button onClick={() => setIdx(idx + 1)}>{">"}</Button>
+                  <Button onClick={() => setIdx(idx + 1)}>다음</Button>
                 )}
               </div>
             </>
