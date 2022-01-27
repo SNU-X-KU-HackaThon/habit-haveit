@@ -203,7 +203,7 @@ export default function SendCheerModal({ setModalSwitch3, userId }) {
             <>
               <p>
                 성공적으로
-                {sendType === "LETTER" ? "편지가" : "선물이"}
+                {sendType === "LETTER" ? " 편지가 " : " 선물이 "}
                 전송되었어요!{" "}
               </p>
               {sendType === "LETTER" ? (
