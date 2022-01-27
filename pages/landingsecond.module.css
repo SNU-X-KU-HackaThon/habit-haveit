@@ -3,17 +3,18 @@
   position: relative;
   height: 375px;
   display: flex;
-
   justify-content: center;
   align-items: center;
 }
 .highwrap {
+  z-index: 10;
   height: -webkit-fill-available;
 }
 
 .wraptext {
   position: absolute;
   top: 143px;
+  animation: fadeIn 0.7s ease-in-out;
   font-size: 21px;
   z-index: 1;
 }
@@ -21,9 +22,19 @@
 .wrap img {
   opacity: 0.8;
   width: 100%;
+  animation: fadeIn 0.7s ease-in-out;
   vertical-align: middle;
 }
-
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}
 /* 
 .landingsecond Button {
     background: white;
