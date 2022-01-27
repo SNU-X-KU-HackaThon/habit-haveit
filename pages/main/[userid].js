@@ -182,10 +182,7 @@ export default function Main() {
             )}
           </div>
           <CopyToClipboard
-            text={
-              "https://lastfrontend-r6g4ck4op-habithaveit.vercel.app/main/" +
-              userId
-            }
+            text={"https://lastfrontend.vercel.app/" + userId}
             onCopy={() => setCopy(true)}
           >
             <div onClick={onClickShare}>
