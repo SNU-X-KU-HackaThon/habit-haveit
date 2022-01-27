@@ -83,7 +83,7 @@ export default function Main() {
   };
   useEffect(() => {
     if (!router.isReady) return;
-    getMainInfo(userId);
+    getMainInfo(userId, 2);
   }, [router.isReady]);
 
   return (
