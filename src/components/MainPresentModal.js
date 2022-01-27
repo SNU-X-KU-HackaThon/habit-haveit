@@ -12,12 +12,21 @@ export default function MainPresentModal({ setModalSwitch2, gift }) {
         <div className={classes.modal}>
           <div className={classes.content}>
             <h2>내 선물함</h2>
-            <div className={classes.mintbox}>
-              <ul>
-                {gift.length === 0 ? (
-                  "아직 받은 선물이 없습니다!"
-                ) : (
-                  <>
+
+            <>
+              {gift.length === 0 ? (
+                <>
+                  <p>아직 받은 선물이 없습니다!</p>
+                  <Button
+                    className={classes.button}
+                    onClick={() => setModalSwitch2(false)}
+                  >
+                    {"닫기"}
+                  </Button>
+                </>
+              ) : (
+                <div className={classes.mintbox}>
+                  <ul>
                     <div className={classes.content}>
                       <h2>From. {gift[idx][0]}</h2>
                       {gift[idx][1] === "붕어빵" ? (
@@ -44,10 +53,10 @@ export default function MainPresentModal({ setModalSwitch2, gift }) {
                         <Button onClick={() => setIdx(idx + 1)}>{">"}</Button>
                       )}
                     </div>
-                  </>
-                )}
-              </ul>
-            </div>
+                  </ul>
+                </div>
+              )}
+            </>
           </div>
         </div>
       </div>

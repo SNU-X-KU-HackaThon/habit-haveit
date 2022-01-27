@@ -22,7 +22,12 @@
   opacity: 0.8;
   border-radius: 10px;
 }
-
+.content2 {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .header {
   padding: 1rem;
 }
