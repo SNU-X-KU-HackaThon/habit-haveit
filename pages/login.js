@@ -35,16 +35,16 @@ const Login = () => {
     }
   };
   const useridChangehandler = (event) => {
-    // if (event.target.value === "id") {
-    setEnteredUserid(event.target.value);
-    console.log(event.target.value);
+    if (event.target.value === "id") {
+      setEnteredUserid(event.target.value);
+      console.log(event.target.value);
+    } else {
+      setError({
+        title: "Invalid Input",
+        message: "아이디를 다시 입력하세요.",
+      });
+    }
   };
-  // } else {
-  //   setError({
-  //     title: "Invalid Input",
-  //     message: "아이디를 다시 입력하세요."
-  //   })
-  // }}
   //"id"나 "password"는 백앤드에서 가져와야되는거
   const passwordChangehandler = (event) => {
     setEnteredpassword(event.target.value);
@@ -67,7 +67,9 @@ const Login = () => {
       <div>
         <h2>
           {" "}
-          내 어드벤트 캘린더에<br/>친구들이 남긴 응원을 확인하세요!
+          내 어드벤트 캘린더에
+          <br />
+          친구들이 남긴 응원을 확인하세요!
         </h2>
       </div>
 
