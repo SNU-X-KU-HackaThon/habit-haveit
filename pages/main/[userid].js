@@ -179,7 +179,10 @@ export default function Main() {
             )}
           </div>
           <CopyToClipboard
-            text={"http://localhost:3000/main/" + userId}
+            text={
+              "https://lastfrontend-r6g4ck4op-habithaveit.vercel.app/main/" +
+              userId
+            }
             onCopy={() => setCopy(true)}
           >
             <div onClick={onClickShare}>
