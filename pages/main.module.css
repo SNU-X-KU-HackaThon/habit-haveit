@@ -47,7 +47,6 @@
 .mainWrapper {
   height: -webkit-fill-available;
   display: flex;
-  overflow: scroll;
   flex-direction: column;
   width: -webkit-fill-available;
 }
