@@ -30,20 +30,21 @@ const Login = () => {
     } else {
       const res = await loginApi(enteredUserid, enteredpassword);
       console.log(res.data);
+
       setLoginState(res.data.userid);
       Router.push("/main/" + res.data.userid);
     }
   };
   const useridChangehandler = (event) => {
-    if (event.target.value === "id") {
-      setEnteredUserid(event.target.value);
-      console.log(event.target.value);
-    } else {
-      setError({
-        title: "Invalid Input",
-        message: "아이디를 다시 입력하세요.",
-      });
-    }
+    // if (event.target.value === "id") {
+    setEnteredUserid(event.target.value);
+    console.log(event.target.value);
+    // } else {
+    //   setError({
+    //     title: "Invalid Input",
+    //     message: "아이디를 다시 입력하세요.",
+    //   });
+    // }
   };
   //"id"나 "password"는 백앤드에서 가져와야되는거
   const passwordChangehandler = (event) => {

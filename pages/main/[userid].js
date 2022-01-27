@@ -22,6 +22,7 @@ export default function Main() {
   const router = useRouter();
   const userId = String(router.query.userid);
   const today = moment().format("D");
+  const month = moment().format("M");
   console.log(today, "today");
   const [modalSwitch, setModalSwitch] = useState(false);
   const [modalSwitch2, setModalSwitch2] = useState(false);
@@ -89,7 +90,9 @@ export default function Main() {
   return (
     <div className={classes.mainWrapper}>
       {/* <img src={`../light.png`} /> */}
-      <div className={classes.title}>{name} 님의 2월 목표</div>
+      <div className={classes.title}>
+        {name} 님의 {month}월 목표
+      </div>
       <div className={classes.goal}>{goal}</div>
       <div className={classes.dateCont}>
         {range(1, total_date).map((idx) => {
