@@ -28,11 +28,17 @@ const Login = () => {
       });
       return;
     } else {
-      const res = await loginApi(enteredUserid, enteredpassword);
-      console.log(res.data);
-
-      setLoginState(res.data.userid);
-      Router.push("/main/" + res.data.userid);
+      try {
+        const res = await loginApi(enteredUserid, enteredpassword);
+        console.log(res);
+        setLoginState(res.data.userid);
+        Router.push("/main/" + res.data.userid);
+      } catch (e) {
+        setError({
+          title: "Invalid input",
+          message: "비밀번호 혹은 아이디가 틀렸습니다.",
+        });
+      }
     }
   };
   const useridChangehandler = (event) => {

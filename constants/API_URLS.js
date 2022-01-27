@@ -9,5 +9,6 @@ const API_URLS = {
   COMPLETE: "/complete/",
   CHECK_GIFT: "/checkgift/",
   CHECK_LETTER: "/checkletter/",
+  ID_CHECK: "/accounts/check/",
 };
 export default API_URLS;

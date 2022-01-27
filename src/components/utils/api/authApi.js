@@ -18,7 +18,6 @@ export const loginApi = async (userid, password) => {
     userid: userid,
     password: password,
   };
-
   return await axiosInstance.post(LOGIN, data);
 };
 

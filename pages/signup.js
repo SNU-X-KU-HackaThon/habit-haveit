@@ -57,6 +57,13 @@ const Signup = () => {
     setError(null);
   };
 
+  const onClick = async () => {
+    console.log("click");
+    // const res = await checkgiftApi(userId);
+    // setGift(res.data.gift_list);
+    // setModalSwitch2(true);
+  };
+
   return (
     <div className={classes.input}>
       {error && (
@@ -69,7 +76,9 @@ const Signup = () => {
       <div>
         <h2>
           {" "}
-          나만의 어드벤트 캘린더를 만들고,<br/>친구들에게 응원을 받아보세요!
+          나만의 어드벤트 캘린더를 만들고,
+          <br />
+          친구들에게 응원을 받아보세요!
         </h2>
       </div>
 
@@ -90,6 +99,9 @@ const Signup = () => {
           onChange={useridChangehandler}
           value={enteredUserid}
         />
+        <div>
+          <Button onClick={onClick}>아이디 확인</Button>
+        </div>
         <label htmlFor="password">비밀번호</label>
         <input
           id="password"
