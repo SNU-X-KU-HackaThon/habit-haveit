@@ -36,7 +36,6 @@
 }
 
 .input form {
-  height: -webkit-fill-available;
   background-color: white;
   animation: fadeIn 0.7s ease-in-out;
   opacity: 95%;
