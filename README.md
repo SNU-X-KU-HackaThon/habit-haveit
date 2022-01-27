@@ -62,7 +62,7 @@
 |  💻 FRONT  |  💻 FRONT  |  💻 FRONT  |  ⚙️ BACK  |  
 | :------------: | :------------: | :------------: | :------------: | 
 |  ![hello](https://user-images.githubusercontent.com/80827003/151349837-2ae8f74c-e2f4-4afc-831a-ac20dbe05e3d.gif)  |  ![KakaoTalk_Video_2022-01-27-21-40-41_1](https://user-images.githubusercontent.com/80827003/151361969-ec9ed91f-5398-4c98-9c6c-593aa56d5dec.gif)  |  ![ezgif com-gif-maker](https://user-images.githubusercontent.com/80827003/151361443-319b54bf-9b7f-4603-a2cd-8ff18b3497fe.gif)  |  ![KakaoTalk_Video_2022-01-27-21-40-34](https://user-images.githubusercontent.com/80827003/151361459-da7a0315-e152-4fd4-883d-77f7f76e6cc4.gif)  |  
-|  [권규리 🍊](https://github.com/kyulee0103)  |  [박가영 🐿](https://github.com/johnyejin)  |  [박채원 🐱](https://github.com/hyh1016)  |  [엄성호 🐨](https://github.com/Minkwan-Song)  |  
+|  [권규리 🍊](https://github.com/kyulee0103)  |  [박가영 🐿](https://github.com/rkdud007)  |  [박채원 🐱](https://github.com/pcw9341)  |  [엄성호 🐨](https://github.com/Minkwan-Song)  |  
 
 
 
