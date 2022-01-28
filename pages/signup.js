@@ -67,10 +67,21 @@ const Signup = () => {
 
   const onClick = async () => {
     console.log("click");
+    if (enteredUserid === "") {
+      setError({
+        title: "Invalid input",
+        message: "아이디를 입력해 주세요.",
+      });
+      return;
+    }
     try {
       const res = await checkApi(enteredUserid);
       if (res.data) {
         setCheck(true);
+        setError({
+          title: "Id Duplicate Check",
+          message: "사용하실 수 있는 아이디 입니다.",
+        });
       }
     } catch (e) {
       setError({
@@ -112,16 +123,22 @@ const Signup = () => {
           )
         }
       >
-        <label htmlFor="id">아이디</label>
-        <input
-          id="id"
-          type="text"
-          onChange={useridChangehandler}
-          value={enteredUserid}
-        />
-        <div>
-          <Button onClick={onClick}>아이디 확인</Button>
+        <div className={classes.idbox}>
+          <div>
+            <label htmlFor="id">아이디</label>
+            <input
+              id="id"
+              type="text"
+              onChange={useridChangehandler}
+              value={enteredUserid}
+            />
+          </div>
+
+          <div>
+            <Button onClick={onClick}>아이디 확인</Button>
+          </div>
         </div>
+
         <label htmlFor="password">비밀번호</label>
         <input
           id="password"

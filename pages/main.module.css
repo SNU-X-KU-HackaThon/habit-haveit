@@ -150,19 +150,22 @@
   opacity: 0.8;
 }
 .iGotMsg {
-  position: absolute;
+  display: flex;
+  height: 0px;
 }
 .iGotMsg p {
-  position: absolute;
+  height: 30px;
+  z-index: 100;
+  position: relative;
   top: -24px;
-  left: 15px;
+  left: -20px;
   color: #ff5050;
 }
 
 .iGotMsg img {
   width: 32px;
   z-index: 100;
-  height: auto;
+  height: 30px;
   margin-top: -17px;
   /* margin-bottom: 0px; */
   opacity: 100%;
