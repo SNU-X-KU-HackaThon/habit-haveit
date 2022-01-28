@@ -7,16 +7,21 @@ import classes from "./SendCheerModal.module.css";
 import range from "./utils/hooks/range";
 import { sendApi } from "./utils/api/sendApi";
 
-export default function SendCheerModal({ setModalSwitch3, userId }) {
+export default function SendCheerModal({
+  setModalSwitch3,
+  userId,
+  total_date,
+}) {
   const [step, setStep] = useState(1);
   // const [letterChange,setLetterChange] = useState(false)
 
   // const letterChangeHandler = (e) => {
   //   e.preventdefault;
   //   setLetterChange(!letterChange);
-  // }
+  //
 
   const today = moment().format("D");
+  const month = moment().format("M");
   console.log(userId);
   const [input, setInput] = useState({
     sender: "",
@@ -111,7 +116,7 @@ export default function SendCheerModal({ setModalSwitch3, userId }) {
           )}
           {step === 1 ? (
             <>
-              <p>2월의 응원을 보내시는 분은 누구신가요?</p>
+              <p>{month}월의 응원을 보내시는 분은 누구신가요?</p>
               <input
                 type="text"
                 onChange={onChange}
@@ -146,7 +151,7 @@ export default function SendCheerModal({ setModalSwitch3, userId }) {
                   onChange={onChange}
                   name="letterDate"
                 >
-                  {range(today, 28).map((day) => (
+                  {range(today, total_date).map((day) => (
                     <option key={day} value={day}>
                       {day}
                     </option>

@@ -227,7 +227,11 @@ export default function Main() {
         ) : null}
 
         {modalSwitch3 ? (
-          <SendCheerModal setModalSwitch3={setModalSwitch3} userId={userId} />
+          <SendCheerModal
+            setModalSwitch3={setModalSwitch3}
+            userId={userId}
+            total_date={total_date}
+          />
         ) : null}
       </div>
     </>
