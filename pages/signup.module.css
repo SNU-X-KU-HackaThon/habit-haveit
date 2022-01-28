@@ -36,6 +36,7 @@
 }
 
 .input form {
+  height: -webkit-fill-available;
   background-color: white;
   border-radius: 70px 70px 0px 0px;
   padding: 35px;

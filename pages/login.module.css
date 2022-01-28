@@ -39,6 +39,7 @@
   background-color: white;
   animation: fadeIn 0.7s ease-in-out;
   opacity: 95%;
+  height: -webkit-fill-available;
   border-radius: 70px 70px 0px 0px;
   padding: 35px;
   justify-content: center;
