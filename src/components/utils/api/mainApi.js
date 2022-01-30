@@ -7,7 +7,7 @@ export const getMainInfoApi = async (userId, month) => {
   const data = {
     userid: userId,
   };
-  console.log(userId);
+
   return await axiosInstance.post(GET_MAIN_INFO, data);
 };
 

@@ -11,13 +11,10 @@ export default function Landingsecond() {
       className={classes.highwrap}
       onClick={() => {
         if (index === 2) {
-          console.log("hi");
         } else {
           if (index === 9) {
-            console.log("hi");
             Router.push("/auth");
           } else {
-            console.log(index);
             setIndex(index + 1);
           }
         }
@@ -25,21 +22,21 @@ export default function Landingsecond() {
     >
       <div className={classes.wrap}>
         {index === 2 ? (
-          <img src="../landing1.png" />
+          <img src="../landing1.png" loading="lazy" />
         ) : index === 3 ? (
-          <img src="../landing2.png" />
+          <img src="../landing2.png" loading="lazy" />
         ) : index === 4 ? (
-          <img src="../landing3.png" />
+          <img src="../landing3.png" loading="lazy" />
         ) : index === 5 ? (
-          <img src="../landing4.png" />
+          <img src="../landing4.png" loading="lazy" />
         ) : index === 6 ? (
-          <img src="../landing5.png" />
+          <img src="../landing5.png" loading="lazy" />
         ) : index === 7 ? (
-          <img src="../landing6.png" />
+          <img src="../landing6.png" loading="lazy" />
         ) : index === 8 ? (
-          <img src="../landing7.png" />
+          <img src="../landing7.png" loading="lazy" />
         ) : index === 9 ? (
-          <img src="../landing8.png" />
+          <img src="../landing8.png" loading="lazy" />
         ) : null}
       </div>
       <div className={classes.landingsecond}>
@@ -48,7 +45,6 @@ export default function Landingsecond() {
             <Button
               onClick={() => {
                 setIndex(index + 2);
-                console.log(index);
               }}
             >
               네! 0_0

@@ -22,7 +22,7 @@ export default function SendCheerModal({
 
   const today = moment().format("D");
   const month = moment().format("M");
-  console.log(userId);
+
   const [input, setInput] = useState({
     sender: "",
     sendType: "",
@@ -51,14 +51,6 @@ export default function SendCheerModal({
       }
     }
     if (step === 4) {
-      console.log(
-        userId,
-        sender,
-        sendType,
-        letterContent,
-        letterDate,
-        presentType
-      );
       const res = await sendApi(
         sender,
         userId,
@@ -67,8 +59,6 @@ export default function SendCheerModal({
         presentType,
         letterContent
       );
-
-      console.log(res);
     }
     if (step === 5) {
       setModalSwitch3(false);
@@ -76,14 +66,6 @@ export default function SendCheerModal({
     }
 
     if (step === 3 && sendType === "PRESENT") {
-      console.log(
-        userId,
-        sender,
-        sendType,
-        letterContent,
-        letterDate,
-        presentType
-      );
       const res = await sendApi(
         sender,
         userId,
@@ -93,7 +75,6 @@ export default function SendCheerModal({
         letterContent
       );
 
-      console.log(res);
       setStep(step + 2);
     } else setStep(step + 1);
   };
@@ -103,14 +84,13 @@ export default function SendCheerModal({
     const { name, value } = e.target;
     const copy = { ...input };
     copy[name] = value;
-    console.log(copy);
+
     setInput(copy);
   };
   const onClick = (type) => {
-    console.log(type);
     const copy = { ...input };
     copy["sendType"] = type;
-    console.log(copy);
+
     setInput(copy);
   };
 

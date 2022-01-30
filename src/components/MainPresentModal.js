@@ -5,10 +5,10 @@ import Button from "../components/Button";
 
 export default function MainPresentModal({ setModalSwitch2, gift }) {
   const [idx, setIdx] = useState(0);
-  console.log(gift, idx, gift[idx]);
+
   return ReactDom.createPortal(
     <div>
-      <div className={classes.backdrop} onClick={() => console.log("hi")}>
+      <div className={classes.backdrop}>
         <div className={classes.modal}>
           <div className={classes.content}>
             <h2>내 선물함</h2>

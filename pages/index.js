@@ -23,7 +23,7 @@ export default function Home() {
         <link rel="icon" href="/favicon2.ico" />
       </Head>
       <div className={classes.indexText}>
-        <img className={classes.letter} src="../letter.png" />
+        <img className={classes.letter} src="../letter.png" loading="lazy" />
         <div>
           <p>Habit, Haveit!</p>
           <p>

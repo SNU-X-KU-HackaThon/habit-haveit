@@ -45,6 +45,7 @@
 }
 
 .content p {
+  word-break: keep-all;
   text-align: center;
   font-weight: bolder;
 }

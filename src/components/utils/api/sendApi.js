@@ -29,7 +29,7 @@ export const sendApi = async (
       month: 2,
     };
   }
-  console.log(data);
+
   return await axiosInstance.post(SEND, data);
 };
 

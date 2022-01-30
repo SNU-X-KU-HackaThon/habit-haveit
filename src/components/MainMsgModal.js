@@ -5,7 +5,7 @@ import Button from "../components/Button";
 
 export default function MainMsgModal({ setModalSwitch, msg }) {
   const [idx, setIdx] = useState(0);
-  console.log(msg);
+
   return ReactDom.createPortal(
     <div>
       <div className={classes.backdrop}>
@@ -19,8 +19,10 @@ export default function MainMsgModal({ setModalSwitch, msg }) {
                 <p>From. {msg[idx][0]}</p>
               </div>
               <div className={classes.actions}>
-                {idx !== 0 && (
+                {idx !== 0 ? (
                   <Button onClick={() => setIdx(idx - 1)}>이전</Button>
+                ) : (
+                  <div />
                 )}
 
                 <Button
@@ -29,8 +31,10 @@ export default function MainMsgModal({ setModalSwitch, msg }) {
                 >
                   닫기
                 </Button>
-                {idx < msg.length - 1 && (
+                {idx < msg.length - 1 ? (
                   <Button onClick={() => setIdx(idx + 1)}>다음</Button>
+                ) : (
+                  <div />
                 )}
               </div>
             </>

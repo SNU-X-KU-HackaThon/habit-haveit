@@ -38,7 +38,7 @@ const Userinfo = () => {
         password,
         enteredgoal
       );
-      console.log(res);
+
       const resUserId = res.data.userId;
       setLogin(resUserId);
       //   const createUserInfo = await axios.post();
@@ -49,11 +49,9 @@ const Userinfo = () => {
 
   const usernameChangehandler = (event) => {
     setEnteredUsername(event.target.value);
-    console.log(enteredUsername);
   };
   const goalChangehandler = (event) => {
     setEnteredgoal(event.target.value);
-    console.log(enteredgoal);
   };
 
   const errorHandler = () => {
