@@ -124,7 +124,7 @@ const Signup = () => {
         }
       >
         <div className={classes.idbox}>
-          <div>
+          <div className={classes.idboxCont}>
             <label htmlFor="id">아이디</label>
             <div>
               <input
@@ -133,7 +133,9 @@ const Signup = () => {
                 onChange={useridChangehandler}
                 value={enteredUserid}
               />
-              <Button onClick={onClick}>아이디 확인</Button>
+              <Button className={classes.checkBtn} onClick={onClick}>
+                아이디 확인
+              </Button>
             </div>
           </div>
         </div>
@@ -152,8 +154,10 @@ const Signup = () => {
           onChange={passwordcheckChangehandler}
           value={enteredpasswordcheck}
         />
-        <div>
-          <Button type="submit">NEXT</Button>
+        <div className={classes.submitWrapper}>
+          <Button className={classes.submitBtn} type="submit">
+            NEXT
+          </Button>
         </div>
       </form>
     </div>
