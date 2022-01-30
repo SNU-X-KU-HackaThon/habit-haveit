@@ -146,7 +146,35 @@
   color: white;
   opacity: 0.8;
 }
+.title > div:first-child {
+  font-size: 24px;
+  text-align: center;
+  padding: 4px 0;
+  margin: 34px 0 0 19px;
+  flex: 1;
+  color: white;
+  word-break: keep-all;
+  opacity: 0.8;
+}
+.title > div:nth-child(2) {
+  font-size: 24px;
+  text-align: center;
+  border-radius: 20px;
+  flex: 1;
+  background: black;
+  word-break: keep-all;
+  padding: 4px 0;
+  margin: 34px 0 0 19px;
+
+  color: #ffeb3b;
+  opacity: 0.8;
+}
 .goal {
+  font-size: 23px;
+  background: #000000b8;
+  padding: 14px;
+  border-radius: 20px;
+  text-align: center;
   margin: 10px 19px;
   color: white;
   opacity: 0.8;

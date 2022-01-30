@@ -120,7 +120,10 @@ export default function Main() {
           )}
           {/* <img src={`../light.png`} /> */}
           <div className={classes.title}>
-            {name} 님의 {month}월 목표
+            <div>
+              {name} 님의 {month}월목표
+            </div>
+            <div>현재까지 {complete_list.length}일달성!</div>
           </div>
           <div className={classes.goal}>{goal}</div>
           <div className={classes.dateCont}>
