@@ -60,7 +60,7 @@ export default function SendCheerModal({
     }
     if (step === 5) {
       setModalSwitch3(false);
-      Router.push("/auth");
+      Router.push("/");
     }
 
     if (step === 3 && sendType === "PRESENT") {

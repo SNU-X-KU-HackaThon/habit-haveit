@@ -9,7 +9,7 @@
 }
 .auth Button {
   background: white;
-  min-width: 200px;
+  min-width: 240px;
   animation: fadeIn 0.7s ease-in-out;
   opacity: 0.8;
   color: black;

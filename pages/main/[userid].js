@@ -19,8 +19,10 @@ import {
 } from "../../src/components/utils/api/sendApi";
 import range from "../../src/components/utils/hooks/range";
 import InfoModal from "../../src/components/InfoModal";
+import InviteModal from "../../src/components/Invitemodal";
 
 export default function Main() {
+  const [inviteState, setInviteState] = useState(false);
   const router = useRouter();
   const userId = String(router.query.userid);
   const today = moment().format("D");
@@ -94,11 +96,8 @@ export default function Main() {
     if (!router.isReady) return;
     getMainInfo(userId);
     if (isLogin !== userId) {
-      setError({
-        title: "잠깐!",
-        message:
-          "해빗 해빗은, 친구의 한달 목표에 응원을 보내, 친구가 그 목표를 잘 지킬수 있게 도와주는 서비스에요! 응원보내기 버튼을 눌러 원하는 종류의 응원을 원하는 날짜에 보내보세요!",
-      });
+      console.log("dd");
+      setInviteState(true);
     }
   }, [router.isReady]);
 
@@ -253,6 +252,10 @@ export default function Main() {
             userId={userId}
             total_date={total_date}
           />
+        ) : null}
+
+        {inviteState ? (
+          <InviteModal setInviteState={setInviteState} name={name} />
         ) : null}
       </div>
     </>

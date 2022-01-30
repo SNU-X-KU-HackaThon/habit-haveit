@@ -34,7 +34,7 @@
 } */
 .modal {
   position: fixed;
-  top: 30vh;
+  top: 16vh;
   width: 300px;
   z-index: 100;
   overflow: hidden;
