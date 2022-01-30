@@ -5,7 +5,7 @@ import classes from "./index.module.css";
 export default function Home() {
   setTimeout(() => {
     Router.push("/landingsecond");
-  }, 3000);
+  }, 5000);
   return (
     <>
       <Head>
@@ -22,8 +22,16 @@ export default function Home() {
         />
         <link rel="icon" href="/favicon2.ico" />
       </Head>
-      <div>
+      <div className={classes.indexText}>
         <img className={classes.letter} src="../letter.png" />
+        <div>
+          <p>Habit, Haveit!</p>
+          <p>
+            언제나 작심삼일에 그치고 마는 우리의 결심들. 혼자만의 결심은 잘
+            지켜지지 않죠. 그 결심을 친구들과 공유하고 서로에게 응원의 메시지를
+            보내며 응원한다면, 가능하지 않을까요
+          </p>
+        </div>
       </div>
     </>
   );

@@ -25,7 +25,7 @@ export default function SendCheerModal({
   console.log(userId);
   const [input, setInput] = useState({
     sender: "",
-    sendType: "LETTER",
+    sendType: "",
     letterDate: today,
     presentType: "붕어빵",
     letterContent: "",
@@ -41,6 +41,12 @@ export default function SendCheerModal({
     if (step === 1) {
       if (sender === "") {
         window.alert("이름이 빈칸입니다!");
+        return;
+      }
+    }
+    if (step === 2) {
+      if (sendType === "") {
+        window.alert("편지 또는 선물을 선택해주세요!");
         return;
       }
     }
@@ -146,7 +152,13 @@ export default function SendCheerModal({
                   src={`../present.png`}
                 />
               </div>
-              <div>{sendType === "PRESENT" ? "선물" : "편지"}</div>
+              <div>
+                {sendType === "PRESENT"
+                  ? "선물"
+                  : sendType === "LETTER"
+                  ? "편지"
+                  : null}
+              </div>
             </>
           ) : step === 3 ? (
             sendType === "LETTER" ? (
