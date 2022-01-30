@@ -133,9 +133,9 @@ const Signup = () => {
                 onChange={useridChangehandler}
                 value={enteredUserid}
               />
-              <Button className={classes.checkBtn} onClick={onClick}>
+              <button className={classes.checkBtn} onClick={onClick}>
                 아이디 확인
-              </Button>
+              </button>
             </div>
           </div>
         </div>
