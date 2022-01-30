@@ -38,6 +38,12 @@ export default function SendCheerModal({
     letterDate,
     presentType
   ) => {
+    if (step === 1) {
+      if (sender === "") {
+        window.alert("이름이 빈칸입니다!");
+        return;
+      }
+    }
     if (step === 4) {
       console.log(
         userId,
