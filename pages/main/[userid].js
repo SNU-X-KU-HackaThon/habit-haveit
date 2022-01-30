@@ -20,6 +20,7 @@ import {
 import range from "../../src/components/utils/hooks/range";
 import InfoModal from "../../src/components/InfoModal";
 import InviteModal from "../../src/components/Invitemodal";
+import LoadingPage from "../../src/components/LoadingPage";
 
 export default function Main() {
   const [inviteState, setInviteState] = useState(false);
@@ -27,7 +28,7 @@ export default function Main() {
   const userId = String(router.query.userid);
   const today = moment().format("D");
   const month = moment().format("M");
-
+  const [loading, setLoading] = useState(false);
   const [modalSwitch, setModalSwitch] = useState(false);
   const [modalSwitch2, setModalSwitch2] = useState(false);
   const [modalSwitch3, setModalSwitch3] = useState(false);
@@ -76,7 +77,9 @@ export default function Main() {
     setModalSwitch4(true);
   };
   const getMainInfo = async (userId) => {
+    setLoading(true);
     const res = await getMainInfoApi(userId);
+    setLoading(false);
     setData(res.data);
   };
   const errorHandler = () => {
@@ -104,147 +107,155 @@ export default function Main() {
         />
         <link rel="icon" href="/favicon2.ico" />
       </Head>
-      <div className={classes.mainWrapper}>
-        {error && (
-          <InfoModal
-            title={error.title}
-            message={error.message}
-            onConfirm={errorHandler}
-          />
-        )}
-        {/* <img src={`../light.png`} /> */}
-        <div className={classes.title}>
-          {name} 님의 {month}월 목표
-        </div>
-        <div className={classes.goal}>{goal}</div>
-        <div className={classes.dateCont}>
-          {range(1, total_date).map((idx) => {
-            return Number.parseInt(today) > idx ? (
-              <div div key={idx}>
-                {" "}
-                {complete_list.includes(idx) ? (
-                  <div
-                    className={classes.dateWrapper}
-                    style={{ position: "relative" }}
-                  >
-                    <div>
-                      {" "}
-                      <img
-                        src={`../openDoors/${idx}.png`}
-                        width="40px"
-                        height="80px"
-                        style={{ opacity: 0.8 }}
-                      />
+      {loading ? (
+        <LoadingPage />
+      ) : (
+        <div className={classes.mainWrapper}>
+          {error && (
+            <InfoModal
+              title={error.title}
+              message={error.message}
+              onConfirm={errorHandler}
+            />
+          )}
+          {/* <img src={`../light.png`} /> */}
+          <div className={classes.title}>
+            {name} 님의 {month}월 목표
+          </div>
+          <div className={classes.goal}>{goal}</div>
+          <div className={classes.dateCont}>
+            {range(1, total_date).map((idx) => {
+              return Number.parseInt(today) > idx ? (
+                <div div key={idx}>
+                  {" "}
+                  {complete_list.includes(idx) ? (
+                    <div
+                      className={classes.dateWrapper}
+                      style={{ position: "relative" }}
+                    >
+                      <div>
+                        {" "}
+                        <img
+                          src={`../openDoors/${idx}.png`}
+                          width="40px"
+                          height="80px"
+                          style={{ opacity: 0.8 }}
+                        />
+                      </div>
+                      <div className={classes.date}>
+                        <p>{idx}</p>
+                      </div>{" "}
                     </div>
-                    <div className={classes.date}>
-                      <p>{idx}</p>
-                    </div>{" "}
-                  </div>
-                ) : (
-                  <div
-                    className={classes.dateWrapper}
-                    style={{ position: "relative" }}
-                  >
-                    <div>
-                      {" "}
-                      <img
-                        src={`../doors/${idx}.png`}
-                        width="40px"
-                        height="80px"
-                        style={{ opacity: 0.2 }}
-                      />
+                  ) : (
+                    <div
+                      className={classes.dateWrapper}
+                      style={{ position: "relative" }}
+                    >
+                      <div>
+                        {" "}
+                        <img
+                          src={`../doors/${idx}.png`}
+                          width="40px"
+                          height="80px"
+                          style={{ opacity: 0.2 }}
+                        />
+                      </div>
+                      <div className={classes.date}>
+                        <p>{idx}</p>
+                      </div>
                     </div>
-                    <div className={classes.date}>
-                      <p>{idx}</p>
+                  )}
+                </div>
+              ) : Number.parseInt(today) === idx ? (
+                <div className={classes.dateWrapper} key={idx}>
+                  {message_list[idx - 1] && (
+                    <div className={classes.iGotMsg}>
+                      <img src={`../image 402.png`} opacity="80%" />
+                      <p>{message_list[idx - 1]}</p>
                     </div>
-                  </div>
-                )}
-              </div>
-            ) : Number.parseInt(today) === idx ? (
-              <div className={classes.dateWrapper} key={idx}>
-                {message_list[idx - 1] && (
-                  <div className={classes.iGotMsg}>
-                    <img src={`../image 402.png`} opacity="80%" />
-                    <p>{message_list[idx - 1]}</p>
-                  </div>
-                )}
-                {check ? (
-                  <img
-                    className={classes.today}
-                    onClick={onClickToday}
-                    src={`../openDoors/${idx}.png`}
-                    width="40px"
-                    height="80px"
-                  />
-                ) : (
-                  <img src={`../doors/${idx}.png`} width="40px" height="80px" />
-                )}
-              </div>
-            ) : (
-              <div key={idx} className={classes.dateWrapper}>
-                {message_list[idx - 1] && (
-                  <div className={classes.iGotMsg}>
-                    <img src={`../image 402.png`} opacity="100%" />
-                    <p>{message_list[idx - 1]}</p>
-                  </div>
-                )}
-
-                <img src={`../doors/${idx}.png`} width="40px" height="80px" />
-              </div>
-            );
-          })}
-        </div>
-
-        {isLogin === userId ? (
-          <div className={classes.mainFooter}>
-            <div onClick={onClickCheck}>
-              {check ? (
-                <img src="../checkboxs.png" />
+                  )}
+                  {check ? (
+                    <img
+                      className={classes.today}
+                      onClick={onClickToday}
+                      src={`../openDoors/${idx}.png`}
+                      width="40px"
+                      height="80px"
+                    />
+                  ) : (
+                    <img
+                      src={`../doors/${idx}.png`}
+                      width="40px"
+                      height="80px"
+                    />
+                  )}
+                </div>
               ) : (
-                <img src="../empty.png" />
-              )}
-            </div>
-            <CopyToClipboard
-              text={"https://habit-haveit-tau.vercel.app/main/" + userId}
-              onCopy={() => setCopy(true)}
-            >
-              <div onClick={onClickShare}>
-                {" "}
-                <img src="../group.png" />
+                <div key={idx} className={classes.dateWrapper}>
+                  {message_list[idx - 1] && (
+                    <div className={classes.iGotMsg}>
+                      <img src={`../image 402.png`} opacity="100%" />
+                      <p>{message_list[idx - 1]}</p>
+                    </div>
+                  )}
+
+                  <img src={`../doors/${idx}.png`} width="40px" height="80px" />
+                </div>
+              );
+            })}
+          </div>
+
+          {isLogin === userId ? (
+            <div className={classes.mainFooter}>
+              <div onClick={onClickCheck}>
+                {check ? (
+                  <img src="../checkboxs.png" />
+                ) : (
+                  <img src="../empty.png" />
+                )}
               </div>
-            </CopyToClipboard>
-            <div onClick={onClickPresent}>
-              <img src="../vector.png" />
+              <CopyToClipboard
+                text={"https://habit-haveit-tau.vercel.app/main/" + userId}
+                onCopy={() => setCopy(true)}
+              >
+                <div onClick={onClickShare}>
+                  {" "}
+                  <img src="../group.png" />
+                </div>
+              </CopyToClipboard>
+              <div onClick={onClickPresent}>
+                <img src="../vector.png" />
+              </div>
             </div>
-          </div>
-        ) : (
-          <div className={classes.falseFooter}>
-            <Button onClick={onClickSend}>응원 보내기</Button>
-          </div>
-        )}
+          ) : (
+            <div className={classes.falseFooter}>
+              <Button onClick={onClickSend}>응원 보내기</Button>
+            </div>
+          )}
 
-        {modalSwitch ? (
-          <MainMsgModal setModalSwitch={setModalSwitch} msg={msg} />
-        ) : null}
-        {modalSwitch2 ? (
-          <MainPresentModal setModalSwitch2={setModalSwitch2} gift={gift} />
-        ) : null}
-        {modalSwitch4 ? (
-          <MainShareModal setModalSwitch4={setModalSwitch4} />
-        ) : null}
+          {modalSwitch ? (
+            <MainMsgModal setModalSwitch={setModalSwitch} msg={msg} />
+          ) : null}
+          {modalSwitch2 ? (
+            <MainPresentModal setModalSwitch2={setModalSwitch2} gift={gift} />
+          ) : null}
+          {modalSwitch4 ? (
+            <MainShareModal setModalSwitch4={setModalSwitch4} />
+          ) : null}
 
-        {modalSwitch3 ? (
-          <SendCheerModal
-            setModalSwitch3={setModalSwitch3}
-            userId={userId}
-            total_date={total_date}
-          />
-        ) : null}
+          {modalSwitch3 ? (
+            <SendCheerModal
+              setModalSwitch3={setModalSwitch3}
+              userId={userId}
+              total_date={total_date}
+            />
+          ) : null}
 
-        {inviteState ? (
-          <InviteModal setInviteState={setInviteState} name={name} />
-        ) : null}
-      </div>
+          {inviteState ? (
+            <InviteModal setInviteState={setInviteState} name={name} />
+          ) : null}
+        </div>
+      )}
     </>
   );
 }
