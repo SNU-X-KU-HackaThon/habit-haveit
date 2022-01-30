@@ -121,7 +121,7 @@ export default function Main() {
           {/* <img src={`../light.png`} /> */}
           <div className={classes.title}>
             <div>
-              {name} 님의 {month}월목표
+              {name}님의 {month}월목표
             </div>
             <div>현재까지 {complete_list.length}일달성!</div>
           </div>
