@@ -73,6 +73,8 @@
 
 .dateCont {
   /* flex: 1; */
+  justify-content: start;
+  padding-left: 5%;
   margin-top: 15px;
   display: flex;
   flex-wrap: wrap;
@@ -81,7 +83,7 @@
   border-radius: 30px;
   width: 90%;
   align-self: center;
-  justify-content: center;
+  padding-bottom: 29%;
   align-content: center;
 }
 @keyframes blink-effect {
