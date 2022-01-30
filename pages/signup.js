@@ -126,16 +126,15 @@ const Signup = () => {
         <div className={classes.idbox}>
           <div>
             <label htmlFor="id">아이디</label>
-            <input
-              id="id"
-              type="text"
-              onChange={useridChangehandler}
-              value={enteredUserid}
-            />
-          </div>
-
-          <div>
-            <Button onClick={onClick}>아이디 확인</Button>
+            <div>
+              <input
+                id="id"
+                type="text"
+                onChange={useridChangehandler}
+                value={enteredUserid}
+              />
+              <Button onClick={onClick}>아이디 확인</Button>
+            </div>
           </div>
         </div>
 

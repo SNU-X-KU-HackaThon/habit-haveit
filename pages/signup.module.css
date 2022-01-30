@@ -90,6 +90,8 @@
   line-height: 32px;
   color: white;
   opacity: 80%;
+  white-space: pre-wrap;
+  min-width: 330px;
   font-size: 23px;
 }
 .input form > div {
