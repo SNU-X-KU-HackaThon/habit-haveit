@@ -18,17 +18,20 @@ import {
   completeApi,
 } from "../../src/components/utils/api/sendApi";
 import range from "../../src/components/utils/hooks/range";
+import InfoModal from "../../src/components/InfoModal";
 
 export default function Main() {
   const router = useRouter();
   const userId = String(router.query.userid);
   const today = moment().format("D");
   const month = moment().format("M");
+
   console.log(today, "today");
   const [modalSwitch, setModalSwitch] = useState(false);
   const [modalSwitch2, setModalSwitch2] = useState(false);
   const [modalSwitch3, setModalSwitch3] = useState(false);
   const [modalSwitch4, setModalSwitch4] = useState(false);
+  const [error, setError] = useState();
   const isLogin = useRecoilValue(loginState);
   const [check, setCheck] = useState(false);
   const [msg, setMsg] = useState([]);
@@ -83,9 +86,20 @@ export default function Main() {
     setData(res.data);
     console.log(res.data);
   };
+  const errorHandler = () => {
+    setError(null);
+  };
+
   useEffect(() => {
     if (!router.isReady) return;
     getMainInfo(userId);
+    if (isLogin !== userId) {
+      setError({
+        title: "잠깐!",
+        message:
+          "해빗 해빗은, 친구의 한달 목표에 응원을 보내, 친구가 그 목표를 잘 지킬수 있게 도와주는 서비스에요! 응원보내기 버튼을 눌러 원하는 종류의 응원을 원하는 날짜에 보내보세요!",
+      });
+    }
   }, [router.isReady]);
 
   return (
@@ -105,6 +119,13 @@ export default function Main() {
         <link rel="icon" href="/favicon2.ico" />
       </Head>
       <div className={classes.mainWrapper}>
+        {error && (
+          <InfoModal
+            title={error.title}
+            message={error.message}
+            onConfirm={errorHandler}
+          />
+        )}
         {/* <img src={`../light.png`} /> */}
         <div className={classes.title}>
           {name} 님의 {month}월 목표

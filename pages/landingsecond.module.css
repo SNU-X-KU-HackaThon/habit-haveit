@@ -13,12 +13,18 @@
 
 .wraptext {
   position: absolute;
-  top: 143px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 203%;
+
   animation: fadeIn 0.7s ease-in-out;
-  font-size: 21px;
+
   z-index: 1;
-  letter-spacing: 1.5px;
-  line-height: 20px;
+}
+
+.wraptext > img {
+  width: 180%;
 }
 
 .wrap img {

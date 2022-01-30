@@ -55,6 +55,8 @@
 .input > div {
   height: 30%;
   display: flex;
+  min-width: 375px;
+  min-height: 184px;
   align-items: center;
   justify-content: center;
 }

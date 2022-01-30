@@ -104,7 +104,7 @@ const Signup = () => {
           onConfirm={errorHandler}
         />
       )}
-      <div>
+      <div className="">
         <h2>
           {" "}
           나만의 어드벤트 캘린더를 만들고,
