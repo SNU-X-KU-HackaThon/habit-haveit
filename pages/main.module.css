@@ -161,6 +161,9 @@
   text-align: center;
   border-radius: 20px;
   flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: black;
   word-break: keep-all;
   padding: 4px 0;

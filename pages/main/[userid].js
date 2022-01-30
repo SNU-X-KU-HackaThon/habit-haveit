@@ -123,7 +123,7 @@ export default function Main() {
             <div>
               {name}님의 {month}월목표
             </div>
-            <div>현재까지 {complete_list.length}일달성!</div>
+            <div>{complete_list.length}일달성!</div>
           </div>
           <div className={classes.goal}>{goal}</div>
           <div className={classes.dateCont}>
