@@ -179,10 +179,10 @@ export default function Main() {
                 </div>
               ) : Number.parseInt(today) === idx ? (
                 <div className={classes.dateWrapper} key={idx}>
-                  {message_list[idx - 1] && (
+                  {message_list[idx] && (
                     <div className={classes.iGotMsg}>
                       <img src={`../image 402.png`} opacity="80%" />
-                      <p>{message_list[idx - 1]}</p>
+                      <p>{message_list[idx]}</p>
                     </div>
                   )}
                   {check ? (
@@ -203,10 +203,10 @@ export default function Main() {
                 </div>
               ) : (
                 <div key={idx} className={classes.dateWrapper}>
-                  {message_list[idx - 1] && (
+                  {message_list[idx] && (
                     <div className={classes.iGotMsg}>
                       <img src={`../image 402.png`} opacity="100%" />
-                      <p>{message_list[idx - 1]}</p>
+                      <p>{message_list[idx]}</p>
                     </div>
                   )}
 
