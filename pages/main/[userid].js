@@ -28,6 +28,7 @@ export default function Main() {
   const userId = String(router.query.userid);
   const today = moment().format("D");
   const month = moment().format("M");
+  const [completeNum, setCompleteNum] = useState(0);
   const [loading, setLoading] = useState(false);
   const [modalSwitch, setModalSwitch] = useState(false);
   const [modalSwitch2, setModalSwitch2] = useState(false);
@@ -39,16 +40,11 @@ export default function Main() {
   const [msg, setMsg] = useState([]);
 
   const [data, setData] = useState({
-    name: "가영",
-    goal: "2월 잘살기",
-    message_list: {
-      1: { msg: 3 },
-      4: { msg: 7 },
-      19: { msg: 3 },
-      22: { msg: 7 },
-    },
-    complete_list: [1, 2, 5, 6, 7],
-    total_date: 28,
+    name: "",
+    goal: "",
+    message_list: {},
+    complete_list: [],
+    total_date: 0,
   });
   const [gift, setGift] = useState([]);
   const [copy, setCopy] = useState(false);
@@ -56,7 +52,13 @@ export default function Main() {
   const { name, goal, message_list, total_date, complete_list } = data;
   const onClickCheck = async () => {
     const res = await completeApi(userId, today, goal);
-
+    if (check) {
+      setCompleteNum(completeNum - 1);
+      console.log(completeNum);
+    } else {
+      setCompleteNum(completeNum + 1);
+      console.log(completeNum);
+    }
     setCheck(!check);
   };
   const onClickToday = async () => {
@@ -81,6 +83,11 @@ export default function Main() {
     const res = await getMainInfoApi(userId);
     setLoading(false);
     setData(res.data);
+    setCompleteNum(res.data.complete_list.length);
+    if (res.data.complete_list.includes(Number.parseInt(today))) {
+      setCheck(true);
+      console.log("hi");
+    }
   };
   const errorHandler = () => {
     setError(null);
@@ -123,7 +130,7 @@ export default function Main() {
             <div>
               {name}님의 {month}월목표
             </div>
-            <div>{complete_list.length}일달성!</div>
+            <div>{completeNum}일달성!</div>
           </div>
           <div className={classes.goal}>{goal}</div>
           <div className={classes.dateCont}>

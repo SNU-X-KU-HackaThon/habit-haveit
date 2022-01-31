@@ -50,14 +50,14 @@ export default function Landingsecond() {
               네! 0_0
             </Button>
 
-            <Button onClick={() => setIndex(index + 1)}>아직이요!</Button>
-            <Button onClick={() => Router.push("/auth")}>스킵할래요!</Button>
+            <Button onClick={() => setIndex(index + 1)}> 아니요! ?_?</Button>
+            <Button onClick={() => Router.push("/auth")}>설명 스킵!</Button>
           </div>
         ) : index === 3 || index === 4 ? (
           <div className={classes.buttons}>
             <img src="../adventcalendar.gif" />
           </div>
-        ) : index === 5 ? (
+        ) : index === 5 || index === 6 ? (
           <div className={classes.mainFooter}>
             <div>
               {check ? (
