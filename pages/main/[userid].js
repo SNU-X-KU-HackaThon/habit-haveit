@@ -63,9 +63,10 @@ export default function Main() {
   };
   const onClickToday = async () => {
     const res = await checkletterApi(userId, today);
-
     setMsg(res.data.letter_list);
-    if (isLogin) setModalSwitch(true);
+    if (isLogin === userId) {
+      setModalSwitch(true);
+    } else return;
   };
   const onClickPresent = async () => {
     const res = await checkgiftApi(userId);
