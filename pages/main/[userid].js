@@ -51,15 +51,15 @@ export default function Main() {
 
   const { name, goal, message_list, total_date, complete_list } = data;
   const onClickCheck = async () => {
-    const res = await completeApi(userId, today, goal);
-    if (check) {
-      setCompleteNum(completeNum - 1);
-      console.log(completeNum);
-    } else {
+    if (check) return;
+    if (window.confirm("오늘 정말 목표를 달성하셨나요?")) {
+      const res = await completeApi(userId, today, goal);
+
       setCompleteNum(completeNum + 1);
       console.log(completeNum);
+
+      setCheck(!check);
     }
-    setCheck(!check);
   };
   const onClickToday = async () => {
     const res = await checkletterApi(userId, today);
