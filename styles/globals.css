@@ -1,0 +1,59 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Poppins:wght@300;400;500;600;700;800;900&display=swap");
+@font-face {
+  font-family: "BMJUA";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMJUA.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "SF_IceLemon";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2106@1.1/SF_IceLemon.woff")
+    format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+html {
+  height: -webkit-fill-available;
+}
+body {
+  height: -webkit-fill-available;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Poppins", "Noto Sans KR", sans-serif;
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+body > div:first-child {
+  background-image: url("https://ifh.cc/g/ZqMKOX.jpg");
+  background-size: cover;
+  background-position: center;
+  height: -webkit-fill-available;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: scroll;
+  align-items: center;
+  justify-content: center;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  font-family: "BMJUA";
+  box-sizing: border-box;
+  color: #4e3517;
+}
+ul {
+  padding: 0;
+}

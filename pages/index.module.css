@@ -1,0 +1,40 @@
+.letter {
+  width: 300px;
+  left: 8%;
+  margin: 21% 0px 21% 9%;
+}
+
+.indexText > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.indexText > div > p:first-child {
+  animation: fadeIn 0.7s ease-in-out;
+  font-size: xxx-large;
+  color: white;
+}
+
+.indexText > div > p:nth-child(2) {
+  animation: fadeIn 0.7s ease-in-out;
+  max-width: 300px;
+  padding: 10px;
+  background: #ffffffbf;
+  border-radius: 13px;
+  line-height: 20.1px;
+  word-break: keep-all;
+  letter-spacing: 1.1px;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}

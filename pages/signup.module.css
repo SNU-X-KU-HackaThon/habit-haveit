@@ -1,0 +1,141 @@
+.submitWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* padding: 15px; */
+  padding-top: 30px;
+}
+
+.input {
+  width: -webkit-fill-available;
+  height: -webkit-fill-available;
+  display: flex;
+  flex-direction: column;
+}
+
+.idbox {
+  width: 100%;
+  padding: 0;
+  align-items: end;
+  padding: 0;
+  justify-content: space-between;
+  display: flex;
+}
+
+.idboxCont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  margin-right: 24px;
+}
+
+.idbox > div > div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.checkBtn {
+  width: 170px;
+  white-space: pre-wrap;
+  min-width: 104px;
+  font: inherit;
+  margin-left: 10px;
+  font-weight: bolder;
+  align-items: center;
+  justify-content: center;
+  background-color: #40748f;
+  color: #fff;
+  padding: 0.25rem 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 4px rgb(0 0 0 / 25%), 0 4px 4px rgb(0 0 0 / 25%);
+  height: 50px;
+  border: 0px;
+  border-radius: 100px;
+  size: larger;
+}
+
+.input label {
+  display: block;
+  font-weight: bold;
+  font-size: 25px;
+  margin-bottom: 30px;
+  margin-top: 40px;
+  color: #4e3517;
+  min-width: 75px;
+}
+
+.input input {
+  font: inherit;
+  display: block;
+  width: -webkit-fill-available;
+  height: 50px;
+  border: 2px solid grey;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+.input input:focus {
+  font: inherit;
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  border-radius: 10px;
+  outline: none;
+  border-color: #40748f;
+}
+
+.input form {
+  height: -webkit-fill-available;
+  background-color: white;
+  border-radius: 70px 70px 0px 0px;
+  padding: 35px;
+  animation: fadeIn 0.7s ease-in-out;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  min-width: 265px;
+}
+
+.input > div {
+  height: 30%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 375px;
+  min-height: 152px;
+}
+.submitBtn {
+  border-radius: 100px;
+  width: 200px;
+  height: 60px;
+  margin-top: 15px;
+}
+
+.input h2 {
+  letter-spacing: 2px;
+  line-height: 32px;
+  color: white;
+  opacity: 80%;
+  white-space: pre-wrap;
+  min-width: 330px;
+  font-size: 23px;
+}
+.input form > div {
+  margin: auto;
+  width: 100%;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 3;
+    transform: none;
+  }
+}

@@ -1,0 +1,9 @@
+.LoadingWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.LoadingWrapper > img {
+  width: 300px;
+}

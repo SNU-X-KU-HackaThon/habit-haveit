@@ -1,0 +1,111 @@
+.backdrop {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+
+  background: rgba(0, 0, 0, 0.75);
+  width: 100%;
+}
+
+.cancel {
+  position: relative;
+  top: -9%;
+  left: 46%;
+  font-size: 20px;
+}
+
+/* .modal {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+  position: fixed;
+  width: 100%;
+  max-width: 500px;
+  z-index: 100;
+  overflow: hidden;
+  background: white;
+  border-radius: 10px;
+} */
+.modal {
+  position: fixed;
+  top: 16vh;
+  width: 300px;
+  z-index: 100;
+  overflow: hidden;
+  background: white;
+  opacity: 0.8;
+  border-radius: 10px;
+}
+
+.header {
+  padding: 1rem;
+}
+
+.header h2 {
+  margin: 0;
+  color: #765227;
+  text-align: center;
+}
+
+.content {
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.content p {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.actions {
+  padding: 0rem 1rem 1rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+
+.content input {
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+  padding: 10px;
+}
+
+.select {
+  width: 80%;
+  height: 40px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.content input:focus {
+  outline: none;
+  border-color: #bee7d7;
+}
+
+.whatitem {
+  display: flex;
+  align-items: center;
+  width: -webkit-fill-available;
+  justify-content: space-evenly;
+}
+.present {
+  width: 92px;
+  height: auto;
+}
+.newletter {
+  width: 70px;
+}
+
+.newletter:clicked {
+  border-color: white;
+}
