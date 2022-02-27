@@ -91,6 +91,6 @@
 
 ## 💪🏻 이번 달 목표 만들러 가볼까요 💪🏻
 
-서비스 링크 : https://habit-haveit-tau.vercel.app/
+목표 만들러 가기 -> https://habit-haveit-tau.vercel.app/
 >
 
